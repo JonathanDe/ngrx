@@ -54,6 +54,11 @@ export function todoReducer(state = estadoInicial, action: fromTodo.Acciones) {
         };
       });
 
+    case fromTodo.BORRAR_ALL_TODO:
+      return state.filter((todo) => {
+        return !todo.completado;
+      });
+
     default:
       return state;
   }

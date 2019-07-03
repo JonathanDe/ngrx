@@ -23,7 +23,7 @@ export class TodoItemComponent implements OnInit {
   ngOnInit() {
     this.checkField = new FormControl(this.item.completado);
     this.txtInput = new FormControl(this.item.texto, Validators.required);
-    console.log(this.item);
+    // console.log(this.item);
     this.checkField.valueChanges.subscribe(() => {
       const action = new ToggleTodoAction(this.item.id);
       this.store.dispatch(action);
